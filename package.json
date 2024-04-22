@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@openzeppelin/hardhat-upgrades": "^3.0.5",
+    "@remix-project/remixd": "^0.6.30",
     "hardhat": "2.21"
   },
   "dependencies": {

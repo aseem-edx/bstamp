@@ -3,8 +3,13 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 
-contract MasterChannelLedger is Initializable, OwnableUpgradeable {
+contract MasterChannelLedger is
+    Initializable,
+    OwnableUpgradeable,
+    PausableUpgradeable
+{
     struct MasterChannelRecord {
         string data;
         uint256 timestamp;
@@ -15,9 +20,20 @@ contract MasterChannelLedger is Initializable, OwnableUpgradeable {
 
     function initialize() public initializer {
         __Ownable_init();
+        __Pausable_init();
     }
 
-    function addMasterChannelRecord(string memory _data) public onlyOwner {
+    function pause() public onlyOwner {
+        _pause();
+    }
+
+    function unpause() public onlyOwner {
+        _unpause();
+    }
+
+    function addMasterChannelRecord(
+        string memory _data
+    ) public onlyOwner whenNotPaused {
         require(
             MasterChannelDataToRecord[_data].timestamp == 0,
             "Data already exists in the ledger"

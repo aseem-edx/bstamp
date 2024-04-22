@@ -43,7 +43,11 @@ contract BSTAMP is Initializable, PausableUpgradeable, OwnableUpgradeable {
         string memory id,
         string memory stampUri,
         string memory appName
-    ) public returns (string memory, string memory, string memory) {
+    )
+        public
+        whenNotPaused
+        returns (string memory, string memory, string memory)
+    {
         if (isStamp(id)) revert("not allowed");
 
         stampIndex.push(id);

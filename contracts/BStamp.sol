@@ -14,6 +14,11 @@ contract BSTAMP is Pausable, Ownable {
         uint256 index;
     }
 
+    string[] private stampIndex;
+    mapping(string => Bstamp) private bstamp;
+
+    event LogNewStamp(string stampUri, string id, string appName);
+
     function pause() public onlyOwner {
         _pause();
     }
@@ -21,11 +26,6 @@ contract BSTAMP is Pausable, Ownable {
     function unpause() public onlyOwner {
         _unpause();
     }
-
-    mapping(string => Bstamp) private bstamp;
-
-    event LogNewStamp(string stampUri, string id, string appName);
-    string[] private stampIndex;
 
     function isStamp(string memory id) public view returns (bool) {
         if (stampIndex.length == 0) return false;

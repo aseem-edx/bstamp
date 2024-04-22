@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URIStorageUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
-contract BSTAMP is Pausable, Ownable {
+contract BSTAMP is Initializable, PausableUpgradeable, OwnableUpgradeable {
     struct Bstamp {
         string stampUri;
         string appName;
@@ -18,6 +19,11 @@ contract BSTAMP is Pausable, Ownable {
     mapping(string => Bstamp) private bstamp;
 
     event LogNewStamp(string stampUri, string id, string appName);
+
+    function initialize() public initializer {
+        __Pausable_init();
+        __Ownable_init();
+    }
 
     function pause() public onlyOwner {
         _pause();

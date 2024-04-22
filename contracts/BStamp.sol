@@ -52,6 +52,7 @@ contract BSTAMP is Pausable, Ownable {
     function getStamp(
         string memory id
     ) public view returns (string memory, string memory) {
+        require(isStamp(id), "BSTAMP: stamp does not exist");
         return (bstamp[id].stampUri, bstamp[id].appName);
     }
 }

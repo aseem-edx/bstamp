@@ -1,0 +1,150 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x77b1677a7F2Aa17004a360A85CaD4760b960417b",
+      "txHash": "0x86d7810f85f072ab6943cedfd53acd54093bfd6c92e033e6711df30f7222c5f6",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "8b86e80a76d2e86fa4812da0f59838c602427fb0aca9fbaa552c0f32e3798c0b": {
+      "address": "0xE166065241c5106b442756CD674Fb51615E8ec12",
+      "txHash": "0x0fc08ce4c6bf1c5d20aa1b12a09daf156e18d9089881a97d9df238c82936c382",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:87"
+          },
+          {
+            "label": "_paused",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_bool",
+            "contract": "PausableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol:29"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "PausableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol:102"
+          },
+          {
+            "label": "ledger",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_array(t_struct(MasterChannelRecord)803_storage)dyn_storage",
+            "contract": "MasterChannelLedger",
+            "src": "contracts/MasterChannelLedger.sol:18"
+          },
+          {
+            "label": "MasterChannelDataToRecord",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(MasterChannelRecord)803_storage)",
+            "contract": "MasterChannelLedger",
+            "src": "contracts/MasterChannelLedger.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(MasterChannelRecord)803_storage)dyn_storage": {
+            "label": "struct MasterChannelLedger.MasterChannelRecord[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(MasterChannelRecord)803_storage)": {
+            "label": "mapping(string => struct MasterChannelLedger.MasterChannelRecord)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(MasterChannelRecord)803_storage": {
+            "label": "struct MasterChannelLedger.MasterChannelRecord",
+            "members": [
+              {
+                "label": "data",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timestamp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {}
+      }
+    }
+  }
+}

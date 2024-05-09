@@ -11,7 +11,6 @@ const config: HardhatUserConfig = {
     rpc: {
       accounts: [ACCOUNT_PRIVATE!],
       url: NETWORK_URL,
-      gasPrice: 21000,
     },
   },
 };
